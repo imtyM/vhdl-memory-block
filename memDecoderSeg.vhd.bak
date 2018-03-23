@@ -1,0 +1,31 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use ieee.numeric_std.all;
+
+
+entity MemoryDecoderSeg is 
+	port (
+			
+			
+			debug : out std_logic;
+			display0 : out std_logic_vector (7 downto 0) := "00111111");
+end MemoryDecoderSeg;
+
+architecture control of segReadController is
+begin 
+
+	display0 <= byte0 when (chip_select = '1' and R_W = '1' and B_N = '1' and (read_address = x"0" or read_address = x"1") )else
+					byte1 when (chip_select = '1' and R_W = '1' and B_N = '1' and (read_address = x"2" or read_address = x"3") )else
+					byte3 when (chip_select = '1' and R_W = '1' and B_N = '1' and (read_address = x"4" or read_address = x"5") )else
+					byte2 when (chip_select = '1' and R_W = '1' and B_N = '1' and (read_address = x"6" or read_address = x"7") )else
+					byte5 when (chip_select = '1' and R_W = '1' and B_N = '1' and (read_address = x"8" or read_address = x"9") )else
+					byte4 when (chip_select = '1' and R_W = '1' and B_N = '1' and (read_address = x"A" or read_address = x"B") )else
+					byte6 when (chip_select = '1' and R_W = '1' and B_N = '1' and (read_address = x"C" or read_address = x"D") )else
+					byte7 when (chip_select = '1' and R_W = '1' and B_N = '1' and (read_address = x"E" or read_address = x"F") )else
+					x"00";
+
+	
+end control;
+			

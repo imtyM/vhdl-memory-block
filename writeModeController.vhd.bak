@@ -1,0 +1,25 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use ieee.numeric_std.all;
+
+entity writeModeController is 
+	port (clk : in std_logic;
+			write_active : in std_logic;
+			active_LED: out std_logic);
+end writeModeController;
+
+architecture control of writeModeController is
+begin
+	debug : process (clk)
+		if (clk'event and clk = '1')then
+			if (write_active = '1')then
+				active_LED = '1';
+			else
+				active_LED = '0';
+			end if;
+		end if
+	end process debug
+end control;
+		

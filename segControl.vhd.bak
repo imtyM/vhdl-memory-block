@@ -1,0 +1,12 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use ieee.numeric_std.all;
+
+
+entity segControl is 
+	port ( display0 : in std_logic_vector (6 downto 0);
+			 display1 : in std_logic_vector (6 downto 0);
+			 display2 : in std_logic_vector (6 downto 0);
+			 display3 : in std_logic_vector (6 downto 0);)

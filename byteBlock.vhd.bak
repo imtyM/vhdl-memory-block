@@ -1,0 +1,11 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use ieee.numeric_std.all;
+
+entity byteBlock is 
+	port ( nibble0 : in std_logic_vector(3 downto 0);
+			 nibble1 : in std_logic_vector(3 downto 0);
+			 
+			 byte_out : out std_logic_vector(6 downto 0)) 

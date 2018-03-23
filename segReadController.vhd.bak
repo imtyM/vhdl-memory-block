@@ -1,0 +1,21 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use ieee.numeric_std.all;
+
+
+entity segReadController is 
+	port (read_address: in std_logic (3 downto 0);
+			B_N : in std_logic;
+			byte0: in std_logic_vector(7 downto 0);
+			byte1: in std_logic_vector(7 downto 0);
+			byte2: in std_logic_vector(7 downto 0);
+			byte3: in std_logic_vector(7 downto 0);
+			byte4: in std_logic_vector(7 downto 0);
+			byte5: in std_logic_vector(7 downto 0);
+			byte6: in std_logic_vector(7 downto 0);
+			byte7: in std_logic_vector(7 downto 0);
+			
+			display0 : out std_logic_vector (6 downto 0));
+			
